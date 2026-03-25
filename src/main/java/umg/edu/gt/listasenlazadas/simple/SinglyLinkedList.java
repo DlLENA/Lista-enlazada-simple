@@ -97,17 +97,19 @@ public class SinglyLinkedList<T> {
      * Eliminar dublicadas 	
      */
     
+    ----------------------------------------------------------------
     /**
      * RETO 2 (comodin)
      * limpiar la lista 
      */
-    public void clean() {
+    public void clean() {  
     	tail = null;
-    	head = null;
+    	head = null;  //ejercicio hecho en clase 
     	size = 0;
     	
     }
-    
+    ----------------------------------------------------------------
+
     
     /**
      * RETO 3
