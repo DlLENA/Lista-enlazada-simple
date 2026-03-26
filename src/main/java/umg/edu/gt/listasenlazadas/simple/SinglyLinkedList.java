@@ -109,7 +109,11 @@ public class SinglyLinkedList<T> {
     	
     }
     ----------------------------------------------------------------
+    
+    
+    
 
+    ----------------------------------------------------------------
     
     /**
      * RETO 3
@@ -119,10 +123,37 @@ public class SinglyLinkedList<T> {
      * lista invertida 6→5→4→2
      * 
      */
+    public void reverse() {
+    	//revisamos si la lista esta vacia o solo hay un elemento 
+    	if (head == null || head.getValue() == null) {
+    		return;
+    	
+    	}
+    	
+    	SimpleNode<T> previous = null;
+    	SimpleNode<T> current = head;
+    	SimpleNode<T> next = null;
+    	
+    	tail = head;
+    	
+    	while (current != null) {
+    		
+    		next = current.getNext();
+    		
+    		current.setNex(previous);
+    		
+    		previous = current;
+    		current = next;
+    		
+    		}
+    	head = previous;
+    }
+    ----------------------------------------------------------------
+
+    
     
     
     ----------------------------------------------------------------
-
     /**
      * RETO 1:
      * Cuenta cuantas veces aparece un valor dentro de la lista.
