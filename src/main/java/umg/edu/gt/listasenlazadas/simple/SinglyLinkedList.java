@@ -92,12 +92,41 @@ public class SinglyLinkedList<T> {
         return size == 0;
     }
     
+    
+   // ----------------------------------------------------------------
     /**
      * RETO 4 
      * Eliminar dublicadas 	
      */
     
-    ----------------------------------------------------------------
+    public void removeDuplicadas() {
+    	SimpleNode<T> current = head;
+    	while (current != null) {
+    		SimpleNode<T> runner = current;
+    		
+    		while (runner.getNext() != null) {
+    			if (isSameValue(current.getValue(), runner.getNext().getValue())) {
+    				
+    				runner.setNext(runner.getNext().getNext());
+    				size--;
+    			}else {
+    				
+    				runner = runner.getNext();
+    			}
+    			
+    			if (runner.getNext() == null) {
+    				tail = runner;
+    			}
+    		}
+    		
+    		current = current.getNext();
+    	}
+    }   
+  //  ----------------------------------------------------------------
+
+    
+    
+     //----------------------------------------------------------------
     /**
      * RETO 2 (comodin)
      * limpiar la lista 
@@ -108,13 +137,12 @@ public class SinglyLinkedList<T> {
     	size = 0;
     	
     }
-    ----------------------------------------------------------------
+   // ----------------------------------------------------------------
     
     
     
 
-    ----------------------------------------------------------------
-    
+   // ----------------------------------------------------------------  
     /**
      * RETO 3
      * Invertir la lista 
@@ -140,7 +168,7 @@ public class SinglyLinkedList<T> {
     		
     		next = current.getNext();
     		
-    		current.setNex(previous);
+    		current.setNext(previous);
     		
     		previous = current;
     		current = next;
@@ -148,12 +176,12 @@ public class SinglyLinkedList<T> {
     		}
     	head = previous;
     }
-    ----------------------------------------------------------------
+   // ----------------------------------------------------------------
 
     
     
     
-    ----------------------------------------------------------------
+   // ----------------------------------------------------------------
     /**
      * RETO 1:
      * Cuenta cuantas veces aparece un valor dentro de la lista.
